@@ -36,9 +36,12 @@ function ChainId() {
 function ConnectChain(props) {
   const context = useWeb3React()
   const { connector, library, chainId, account, activate, deactivate, active, error } = context
+  console.log("@@@connector @ " + connector)
 
   const [activatingConnector, setActivatingConnector] = React.useState()
+  console.log("@@@activatingConnector @ " + activatingConnector)
   React.useEffect(() => {
+    console.log(activatingConnector && activatingConnector === connector)
     if (activatingConnector && activatingConnector === connector) {
       setActivatingConnector(undefined)
     }
