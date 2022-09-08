@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useWeb3React } from '@web3-react/core'
+import { injected } from './utils/connector'
 
 function App() {
+  const { chainId, active, account, library, connector, activate, deactivate } = useWeb3React()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button 
+        onClick={() => {
+          activate(injected)
+        }}
+      >点击链接</button>
     </div>
   );
 }
