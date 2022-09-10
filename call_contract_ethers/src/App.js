@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { useEagerConnect } from './hooks/hooks'
 import ChainId from './components/ChainId'
 import ConnectChain from './components/ConnectChain'
+import ConnectGetSet from './components/ConnectGetSet'
 
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
           <h1>Counter Example </h1>
           <ChainId/>
           <ConnectChain triedEager={triedEager} />
+          <ConnectGetSet />
         </header>
       </div>
   );
