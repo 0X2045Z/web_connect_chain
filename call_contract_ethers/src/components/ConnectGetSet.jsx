@@ -4,10 +4,12 @@ import {parseEther } from 'ethers/lib/utils'
 
 import GETSETABI from '../abis/getSet.json'
 
-const addressContract = '0x1eE325Ab6F30E1FB5E636e701f5B36102f9bC61C'
+const addressContract = '0x8183777d1a4A3027D8a04c4d22f291a154e9387F'
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
+// 调用合约只读函数，使用provide
 // const GetSet = new ethers.Contract(addressContract, GETSETABI, provider)
+// 调用合约写函数则需要singer
 const GetSet = new ethers.Contract(addressContract, GETSETABI, signer)
 
 export default class ConnectGetSet extends Component {
